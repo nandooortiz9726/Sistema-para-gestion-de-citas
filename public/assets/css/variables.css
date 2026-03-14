@@ -1,0 +1,163 @@
+:root {
+   /* =========================================
+       🎨 1. PALETA DE COLORES (HOSPITAL/MÉDICO)
+       ========================================= */
+   /* Colores Principales (Brand) */
+   --clr-primary: #0077b6;
+   /* Azul médico clásico - Confianza */
+   --clr-primary-light: #0096c7;
+   /* Azul claro - Botones hover, detalles */
+   --clr-primary-dark: #023e8a;
+   /* Azul profundo - Títulos fuertes, headers */
+   --clr-primary-blue: #792cff;
+   --clr-primary-blue-light: #EFFAFB;
+
+   /* Colores Secundarios (Acentos) */
+   --clr-secondary: #00b4d8;
+   /* Cyan vibrante - Botones de acción secundaria, iconos de salud */
+   --clr-accent: #48cae4;
+   /* Celeste brillante - Detalles sutiles, fondos de apoyo */
+
+   /* Colores Semánticos (Mensajes y Estados) */
+   --clr-success: #2a9d8f;
+   /* Verde clínico - Citas confirmadas, éxito */
+   --clr-success-bg: #e9f5f3;
+   /* Fondo verde muy claro - Alertas de éxito */
+   --clr-warning: #e9c46a;
+   /* Amarillo suave - Citas pendientes, advertencias */
+   --clr-warning-bg: #fdf8e9;
+   /* Fondo amarillo muy claro */
+   --clr-danger: #e63946;
+   /* Rojo suave - Cancelaciones, errores urgentes */
+   --clr-danger-bg: #fcebeb;
+   /* Fondo rojo muy claro - Alertas de error */
+   --clr-info: #caf0f8;
+   /* Azul muy pálido - Información general */
+
+   /* Escala de Grises (Textos, Fondos, Bordes) */
+   --clr-white: #ffffff;
+   /* Blanco puro - Tarjetas, contenedores principales */
+   --clr-bg-app: #f4f7f6;
+   /* Gris/Azul muy claro - Fondo general de la aplicación (da sensación de limpieza) */
+   --clr-gray-100: #f8f9fa;
+   /* Gris extra claro - Fondos de inputs, filas alternas de tablas */
+   --clr-gray-200: #e9ecef;
+   /* Gris claro - Bordes suaves, líneas divisoras */
+   --clr-gray-400: #ced4da;
+   /* Gris medio - Bordes de inputs inactivos, placeholders */
+   --clr-gray-600: #6c757d;
+   /* Gris oscuro - Textos secundarios, etiquetas (labels), fechas */
+   --clr-gray-800: #343a40;
+   /* Gris muy oscuro (Casi negro) - Textos principales, párrafos que requieren lectura fácil */
+   --clr-black: #212529;
+   /* Títulos muy oscuros */
+
+   /* =========================================
+       🔤 2. TIPOGRAFÍA Y FUENTES
+       ========================================= */
+   --font-primary: 'Poppins', system-ui, -apple-system, sans-serif;
+   /* Muy legible, moderna y limpia */
+
+   /* Tamaños de fuente (Basados en rem para accesibilidad) */
+   --fs-xs: 0.75rem;
+   /* 12px - Notas pequeñas, timestamps */
+   --fs-sm: 0.875rem;
+   /* 14px - Textos secundarios, labels de botones pequeños */
+   --fs-base: 1rem;
+   /* 16px - Tamaño de texto general, inputs */
+   --fs-md: 1.125rem;
+   /* 18px - Subtítulos pequeños, menús de navegación */
+   --fs-lg: 1.25rem;
+   /* 20px - Títulos de tarjetas (Ej. "Doctor Juan") */
+   --fs-xl: 1.5rem;
+   /* 24px - Subtítulos principales de sección */
+   --fs-2xl: 2rem;
+   /* 32px - Títulos de página grandes */
+
+   /* Pesos de fuente */
+   --fw-light: 300;
+   --fw-regular: 400;
+   --fw-medium: 500;
+   --fw-semibold: 600;
+   --fw-bold: 700;
+
+   /* =========================================
+       📏 3. ESPACIADO (PADDING, MARGIN, GAPS)
+       ========================================= */
+   /* Usamos una escala coherente para que todo encaje perfecto */
+   --space-2xs: 0.25rem;
+   /* 4px - Espacios diminutos (ej. entre icono y texto) */
+   --space-xs: 0.5rem;
+   /* 8px - Espacios pequeños, padding de items en listas */
+   --space-sm: 0.75rem;
+   /* 12px - Gaps pequeños en flexbox, padding de botones estándar */
+   --space-md: 1rem;
+   /* 16px - Padding general, separación estándar */
+   --space-lg: 1.5rem;
+   /* 24px - Padding de tarjetas (Cards), áreas de formularios */
+   --space-xl: 2rem;
+   /* 32px - Separación entre secciones grandes */
+   --space-2xl: 3rem;
+   /* 48px - Padding de layouts principales */
+
+   /* =========================================
+       🔲 4. BORDES Y SOMBRAS
+       ========================================= */
+   /* Radios de borde (Redondeo) */
+   --radius-sm: 4px;
+   /* Cajas de texto (inputs), checkboxes (Sensación más formal) */
+   --radius-md: 8px;
+   /* Botones estándar, tarjetas pequeñas */
+   --radius-lg: 12px;
+   /* Tarjetas principales de información, modales */
+   --radius-full: 9999px;
+   /* Botones redondeados tipo píldora, avatares de doctores */
+
+   /* Grosor de bordes */
+   --border-thin: 1px solid var(--clr-gray-200);
+   --border-input: 1px solid var(--clr-gray-400);
+   --border-focus: 2px solid var(--clr-primary);
+
+   /* Sombras (Muy importantes en diseño moderno para dar profundidad sin que se vea saturado) */
+   /* Sombra muy sutil para botones flotantes débiles o elementos pequeños */
+   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+   /* Sombra estándar para Tarjetas (Cards) de citas, información de pacientes */
+   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+   /* Sombra grande para Modales o menús desplegables (Dropdowns) */
+   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+   /* Sombra superior para barras de navegación fijas abajo en móviles */
+   --shadow-up: 0 -4px 6px -1px rgba(0, 0, 0, 0.05);
+
+   /* =========================================
+       ✨ 5. TRANSICIONES (ANIMACIONES SUAVES)
+       ========================================= */
+   --transition-fast: 150ms ease-in-out;
+   /* Para hover en botones o enlaces */
+   --transition-normal: 300ms ease-in-out;
+   /* Para abrir modales o pestañas */
+}
+
+/* 
+  ========================================================
+  RESET BÁSICO RECOMENDADO PARA USAR CON ESTAS VARIABLES
+  ========================================================
+  (Puedes poner esto en tu main.css o dejarlo aquí abajo)
+*/
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   font-family: var(--font-primary);
+   background-color: var(--clr-bg-app);
+   color: var(--clr-gray-800);
+   line-height: 1.5;
+   -webkit-font-smoothing: antialiased;
+}
