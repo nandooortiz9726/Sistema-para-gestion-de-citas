@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/assets/css/dashboard.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>🏥 HealthApp</h2>
+        <a href="#">Dashboard</a>
+        <a href="#" onclick="mostrarCitas()">Citas</a>
+        <a href="#" onclick="mostrarProfesionales()">Profesionales</a>
+        <a href="/">Salir</a>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+        <h1>Bienvenido 👋</h1>
+
+        <!-- ACCIONES -->
+        <div class="cards">
+            <div class="card" onclick="mostrarFormulario()">📅 Agendar cita</div>
+            <div class="card" onclick="mostrarCitas()">❌ Cancelar cita</div>
+            <div class="card" onclick="mostrarProfesionales()">👨‍⚕️ Ver doctores</div>
+        </div>
+
+        <!-- CONTENIDO DINÁMICO -->
+        <div id="contenido"></div>
+
+    </main>
+
+</div>
+
+<script src="/assets/js/dashboard.js"></script>
+
+</body>
+</html>

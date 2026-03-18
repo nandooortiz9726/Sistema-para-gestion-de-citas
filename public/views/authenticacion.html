@@ -108,12 +108,13 @@
               <h2 class="panel-header__title">Log In</h2>
             </div>
 
-            <form class="auth-form" action="">
+            <form class="auth-form" action="/api/login" method="POST">
               <div class="auth-form__group">
                 <label class="auth-form__label" for="login-email">Email</label>
                 <input
                   class="auth-form__input"
                   id="login-email"
+                  name="email"
                   type="email"
                   placeholder="Enter your email address"
                 />
@@ -126,6 +127,7 @@
                 <input
                   class="auth-form__input"
                   id="login-password"
+                  name="password"
                   type="password"
                   placeholder="Enter your password"
                 />
@@ -149,7 +151,7 @@
               <h2 class="panel-header__title">Sign Up</h2>
             </div>
 
-            <form class="auth-form" action="">
+            <form class="auth-form" action="/api/register" method="POST">
               <div class="auth-form__group">
                 <label class="auth-form__label" for="reg-name">Name</label>
                 <input
