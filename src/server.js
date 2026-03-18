@@ -1,25 +1,44 @@
+const mongoose = require("mongoose");
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
 
-// 1. Inicializamos la aplicación de Express
 const app = express();
-
-// 2. Definimos el puerto en el que correrá nuestro servidor
 const PORT = process.env.PORT || 3000;
 
-// 3. Middlewares: Configurar Express para entender archivos estáticos (CSS, JS, imágenes)
-// Todos los archivos de la carpeta "public" estarán disponibles directamente.
-// Así, el HTML puede usar href="/assets/css/...".
+// 🔥 Conexión a MongoDB 
+mongoose.connect("mongodb://127.0.0.1:27017/citas_medicas")
+  .then(() => console.log("✅ Mongo conectado"))
+  .catch(err => console.log(err));
+
+// 🔥 Middlewares (SOLO UNA VEZ)
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// 🔥 Archivos estáticos
 app.use(express.static(path.join(__dirname, '../public')));
 
-// 4. Rutas: ¿Qué pasa cuando entran a la página principal?
+// 🔥 Ruta principal (HTML)
 app.get('/', (req, res) => {
-    // Cuando el usuario entra a la raíz ("/") le enviamos el archivo de login.
+    res.sendFile(path.join(__dirname, '../public/views/index.html'));
+});
+
+app.get('/auth', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/views/authenticacion.html'));
 });
 
-// 5. Encendemos el servidor
+app.get('/dashboard', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/views/dashboard.html'));
+});
+
+// 🔥 Rutas separadas (BUENA PRÁCTICA)
+const authRoutes = require("../routes/auth");
+app.use("/api", authRoutes);
+
+// 🔥 Servidor
 app.listen(PORT, () => {
     console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
 });
+
+const citasRoutes = require("../routes/citas");
+app.use("/api", citasRoutes);
