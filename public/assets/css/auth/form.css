@@ -1,37 +1,42 @@
+/* Contenedor principal del formulario (login / registro) */
 .auth-form {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* organizo los inputs en columna */
     justify-content: flex-start;
-    align-items: stretch;
-    gap: var(--space-md);
+    align-items: stretch; /* los inputs ocupan todo el ancho */
+    gap: var(--space-md); /* espacio entre campos */
     inline-size: 100%;
 }
 
+/* Grupo de cada input con su label o estructura */
 .auth-form__group {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: var(--space-2xs);
+    gap: var(--space-2xs); /* pequeño espacio entre label e input */
     inline-size: 100%;
 }
 
+/* Estilo de los inputs */
 .auth-form__group input {
-    inline-size: 100%;
+    inline-size: 100%; /* ocupa todo el ancho del contenedor */
     padding-inline: var(--space-md);
     padding-block: var(--space-xs);
-    border-radius: var(--radius-full);
+    border-radius: var(--radius-full); /* bordes redondeados */
     border: var(--border-thin);
     box-shadow: var(--shadow-sm);
     transition: var(--transition-fast);
     font-size: var(--fs-xs);
 }
 
+/* Cuando el input está seleccionado (focus) */
 .auth-form__group input:focus {
-    border-color: var(--clr-primary);
-    box-shadow: var(--shadow-md);
+    border-color: var(--clr-primary); /* cambio color del borde */
+    box-shadow: var(--shadow-md); /* resalto un poco más */
 }
 
+/* Botón principal del formulario */
 .auth-btn {
     inline-size: 100%;
     padding-inline: var(--space-md);
@@ -43,11 +48,12 @@
     font-size: var(--fs-base);
     font-family: var(--ff-primary);
     color: var(--clr-white);
-    background-color: var(--clr-primary-blue);
+    background-color: var(--clr-primary-blue); /* color principal */
     font-weight: var(--fw-medium);
-    cursor: pointer;
+    cursor: pointer; /* cambia el cursor al pasar */
 }
 
+/* Texto inferior (ej: "¿No tienes cuenta?") */
 .auth-footer-text {
     font-size: var(--fs-sm);
     color: var(--clr-gray-600);
@@ -55,6 +61,7 @@
     margin-top: var(--space-md);
 }
 
+/* Link dentro del footer */
 .auth-link {
     color: var(--clr-primary);
     text-decoration: none;

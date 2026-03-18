@@ -7,9 +7,8 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="header">
-    <div class="logo">🏥 HealthApp</div>
+    <div class="logo">HealthApp</div>
 
     <nav class="nav">
         <a href="#inicio">Inicio</a>
@@ -21,7 +20,6 @@
     <a href="/auth" class="btn-login">Iniciar sesión</a>
 </header>
 
-<!-- HERO -->
 <section class="hero" id="inicio">
     <div class="hero-text">
         <h1>Agenda tus citas médicas fácilmente</h1>
@@ -34,50 +32,82 @@
     </div>
 </section>
 
-<!-- SERVICIOS -->
 <section class="services" id="servicios">
     <h2>Servicios</h2>
 
     <div class="cards">
         <div class="card">
-            <h3>📅 Agendar citas</h3>
+            <h3>Agendar citas</h3>
             <p>Reserva en segundos</p>
         </div>
 
         <div class="card">
-            <h3>👨‍⚕️ Profesionales</h3>
+            <h3>Profesionales</h3>
             <p>Encuentra especialistas</p>
         </div>
 
         <div class="card">
-            <h3>⚡ Rápido</h3>
+            <h3>Rápido</h3>
             <p>Interfaz sencilla</p>
         </div>
     </div>
 </section>
 
-<!-- DOCTORES -->
 <section class="doctors" id="doctores">
     <h2>Nuestros doctores</h2>
 
     <div class="cards">
         <div class="card">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Juan Pérez">
             <h3>Dr. Juan Pérez</h3>
         </div>
 
         <div class="card">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dra. Ana López">
             <h3>Dra. Ana López</h3>
         </div>
     </div>
 </section>
 
-<!-- CONTACTO -->
 <section class="contact" id="contacto">
-    <h2>Contáctanos</h2>
-    <p>Email: contacto@healthapp.com</p>
+    <div class="contact-container">
+        <h2>Contáctanos</h2>
+        <p>Envíanos tus dudas o sugerencias a través del siguiente formulario:</p>
+        
+        <form action="/api/contacto" method="POST" class="contact-form">
+            <div class="form-group">
+                <input type="text" name="nombre" placeholder="Nombre completo" required>
+            </div>
+            
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+            </div>
+            
+            <div class="form-group">
+                <input type="date" name="fecha">
+            </div>
+            
+            <div class="form-group">
+                <textarea name="mensaje" placeholder="Escribe tu mensaje aquí..." rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn-submit">Enviar consulta</button>
+        </form>
+    </div>
 </section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-info">
+            <h4>HealthApp</h4>
+            <p>Email: contacto@healthapp.com</p>
+            <p>Teléfono: +57 (2) 123 4567</p>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2026 HealthApp. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>

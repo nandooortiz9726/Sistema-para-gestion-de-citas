@@ -1,50 +1,57 @@
 /* authentication.css */
 
+/* Contenedor principal de la pantalla de autenticación */
 .auth-layer {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: var(--clr-bg-app);
+    flex-direction: column; /* organizo todo en columna */
+    justify-content: center; /* centro verticalmente */
+    align-items: center; /* centro horizontalmente */
+    min-height: 100vh; /* ocupa toda la altura de la pantalla */
+    background-color: var(--clr-bg-app); /* color de fondo general */
 }
 
-/*header*/
+/* ================= HEADER ================= */
 
+/* Sección del header (barra superior) */
 .auth-header--section {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* separo logo y navegación */
     align-items: center;
     max-inline-size: 100%;
     inline-size: 100%;
     padding-inline: var(--space-2xl);
     padding-block: var(--space-xs);
+    /* fondo con degradado radial para efecto visual */
     background: radial-gradient(circle at top, var(--clr-white), var(--clr-primary-blue-light));
 }
 
+/* Contenedor del título del header */
 .auth-header__container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: stretch;
-    gap: var(--space-2xs);
+    gap: var(--space-2xs); /* pequeño espacio entre elementos */
 }
 
+/* Título principal */
 .auth-header__title {
     margin: 0;
     color: var(--clr-primary-blue);
 }
 
+/* Navegación del header */
 .auth-header__nav {
     display: flex;
-    gap: var(--space-md);
-    backdrop-filter: blur(10px);
+    gap: var(--space-md); /* espacio entre links */
+    backdrop-filter: blur(10px); /* efecto glass */
     border: 1px solid var(--clr-primary-blue-light);
     border-radius: var(--radius-full);
     padding-inline: var(--space-2xs);
     padding-block: var(--space-2xs);
 }
 
+/* Estilo de los links del header */
 .auth-header__nav-link {
     color: var(--clr-primary);
     text-decoration: none;
@@ -57,17 +64,20 @@
     box-shadow: var(--shadow-sm);
     transition: var(--transition-fast);
 
+    /* efecto hover para interacción */
     &:hover {
         background-color: var(--clr-primary-blue);
         color: var(--clr-white);
     }
 }
 
+/* Opciones del header (iconos o acciones) */
 .auth-header__options {
     display: flex;
     gap: var(--space-md);
 }
 
+/* Contenedor de cada icono/opción */
 .auth-header__option {
     display: flex;
     align-items: center;
@@ -79,35 +89,39 @@
     box-shadow: var(--shadow-sm);
 }
 
+/* Iconos del header */
 .--icon {
     width: 18px;
     height: 18px;
     color: var(--clr-gray-600);
 }
 
-/*main*/
+/* ================= MAIN ================= */
 
+/* Contenedor principal del formulario */
 .auth-container--section {
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* centro el contenido */
     align-items: center;
     background-color: var(--clr-bg-app);
     padding: var(--space-xl);
 }
 
+/* Caja principal donde están login y registro */
 .auth-box {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr; /* dos columnas (login y registro) */
     position: relative;
     inline-size: 1000px;
     max-inline-size: 100%;
     background-color: var(--clr-white);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
-    overflow: hidden;
+    overflow: hidden; /* oculta desbordes */
 }
 
+/* Panel interno (login o registro) */
 .auth-panel {
     display: flex;
     align-items: flex-start;
@@ -117,10 +131,12 @@
     padding-inline: var(--space-2xl);
 }
 
+/* Header dentro del panel */
 .panel-header {
     margin-bottom: var(--space-xl);
 }
 
+/* Subtítulo (ej: "Welcome") */
 .panel-header__subtitle {
     font-size: var(--fs-sm);
     font-weight: var(--fw-medium);
@@ -129,13 +145,15 @@
     letter-spacing: 1px;
 }
 
+/* Título principal del panel */
 .panel-header__title {
     font-size: var(--fs-2xl);
     color: var(--clr-gray-800);
     margin-top: var(--space-2xs);
 }
 
+/* Estilos generales de inputs */
 input {
     font-family: var(--ff-primary);
-    outline: none;
+    outline: none; /* quito el borde azul por defecto */
 }

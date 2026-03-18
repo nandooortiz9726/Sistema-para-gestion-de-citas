@@ -1,41 +1,47 @@
+/* Contenedor principal del overlay que se desliza */
 .auth-overlay-container {
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 50%; /* Empieza a la mitad de la pantalla */
     width: 50%;
     height: 100%;
-    overflow: hidden;
-    transition: transform 0.6s ease-in-out;
-    z-index: 100;
+    overflow: hidden; /* Para que nada se salga del borde durante el movimiento */
+    transition: transform 0.6s ease-in-out; /* Velocidad de la animación de deslizamiento */
+    z-index: 100; /* Aseguro que esté por encima de todo */
 }
 
+/* El fondo/color del overlay */
 .auth-overlay {
     position: relative;
-    left: -100%;
+    left: -100%; /* Truco para compensar el movimiento del contenedor */
     height: 100%;
-    width: 200%;
+    width: 200%; /* Doble de ancho para que cubra todo el espacio al moverse */
     background-color: var(--clr-primary);
     transition: transform 0.6s ease-in-out;
 }
 
+/* Estilos para la imagen de fondo del overlay */
 .auth-overlay__img {
     width: 50%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Para que la foto no se deforme */
     object-position: center;
     opacity: 0.9;
 }
 
+/* Cuando se activa el panel derecho, muevo el contenedor a la izquierda */
 .auth-box.right-panel-active .auth-overlay-container {
     transform: translateX(-100%);
 }
 
+/* Muevo el fondo en sentido contrario para crear el efecto visual de deslizamiento */
 .auth-box.right-panel-active .auth-overlay {
     transform: translateX(50%);
 }
 
-/* cambio de visible a oculto y de oculto a visible ambos paneles */
+/* --- Manejo de visibilidad entre Register y Login --- */
 
+/* Panel de registro: oculto por defecto */
 .auth-panel--register {
     position: absolute;
     top: 0;
@@ -48,6 +54,7 @@
     visibility: hidden;
 }
 
+/* Panel de login: visible al cargar la página */
 .auth-panel--login {
     position: absolute;
     top: 0;
@@ -60,6 +67,7 @@
     visibility: visible;
 }
 
+/* Al activar el registro, mando el login a la derecha y lo oculto */
 .auth-box.right-panel-active .auth-panel--login {
     transform: translateX(100%);
     opacity: 0;
@@ -67,9 +75,10 @@
     z-index: 1;
 }
 
+/* Al activar el registro, muevo el panel de registro y lo hago aparecer */
 .auth-box.right-panel-active .auth-panel--register {
     transform: translateX(100%);
     opacity: 1;
     visibility: visible;
-    z-index: 5;
+    z-index: 5; /* Lo traigo al frente */
 }

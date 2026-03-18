@@ -1,12 +1,15 @@
 const contenedor = document.getElementById('contenido');
 
-// 👨‍⚕️ MOSTRAR DOCTORES
+// Obtener y mostrar la lista de doctores desde el backend
 async function mostrarProfesionales() {
+    // Petición a la API y conversión de la respuesta a JSON
     const res = await fetch('/api/profesionales');
     const data = await res.json();
 
+    // Reiniciar el contenedor principal con el título
     contenedor.innerHTML = "<h2>Profesionales</h2>";
 
+    // Recorrer los datos para insertar el HTML de cada card
     data.forEach(p => {
         contenedor.innerHTML += `
             <div class="card">
@@ -17,13 +20,14 @@ async function mostrarProfesionales() {
     });
 }
 
-// 📅 MOSTRAR CITAS
+// Cargar el historial de citas del usuario
 async function mostrarCitas() {
     const res = await fetch('/api/citas');
     const data = await res.json();
 
     contenedor.innerHTML = "<h2>Mis citas</h2>";
 
+    // Generar la visualización de las citas y su estado actual
     data.forEach(c => {
         contenedor.innerHTML += `
             <div class="card">
@@ -35,16 +39,19 @@ async function mostrarCitas() {
     });
 }
 
-// 📝 FORMULARIO DE CITA
+// Renderizar el formulario de agendamiento de forma dinámica
 async function mostrarFormulario() {
+    // Necesito traer los profesionales para llenar el selector
     const res = await fetch('/api/profesionales');
     const profesionales = await res.json();
 
+    // Construir los options del select a partir de los datos recibidos
     let opciones = "";
     profesionales.forEach(p => {
         opciones += `<option value="${p.nombre}">${p.nombre}</option>`;
     });
 
+    // Insertar el formulario completo con las opciones cargadas
     contenedor.innerHTML = `
         <h2>Agendar cita</h2>
 
