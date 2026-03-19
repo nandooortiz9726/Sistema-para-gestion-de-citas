@@ -30,4 +30,12 @@ router.get('/profesionales', async (req, res) => {
     res.json(profesionales);
 });
 
+router.delete('/citas/:id', async (req, res) => {
+    const { id } = req.params;
+
+    await Cita.findByIdAndDelete(id);
+
+    res.json({ message: "Cita eliminada" });
+});
+
 module.exports = router;

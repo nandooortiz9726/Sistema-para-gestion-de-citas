@@ -30,12 +30,16 @@ async function mostrarCitas() {
     // Generar la visualización de las citas y su estado actual
     data.forEach(c => {
         contenedor.innerHTML += `
-            <div class="card">
-                <p>${c.profesional}</p>
-                <p>${c.fecha}</p>
-                <p>${c.estado}</p>
-            </div>
-        `;
+    <div class="card">
+        <p>${c.profesional}</p>
+        <p>${c.fecha}</p>
+        <p>${c.estado}</p>
+
+        <button onclick="eliminarCita('${c._id}')">
+            ❌ Cancelar
+        </button>
+    </div>
+`;
     });
 }
 
@@ -67,4 +71,17 @@ async function mostrarFormulario() {
             <button type="submit">Agendar</button>
         </form>
     `;
+}
+
+async function eliminarCita(id) {
+    const res = await fetch(`/api/citas/${id}`, {
+        method: 'DELETE'
+    });
+
+    const data = await res.json();
+
+    alert(data.message);
+
+    // recargar citas
+    mostrarCitas();
 }
